@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255 255 255;
+  --foreground: 17 24 39;
+}
+
+.dark {
+  --background: 17 24 39;
+  --foreground: 229 231 235;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+}
+
+/****************
+  A11y Focus
+*****************/
+:focus-visible {
+  outline: 2px solid theme('colors.accent.500');
+  outline-offset: 2px;
+}
+
+/****************
+  Utilities
+*****************/
+.container-responsive {
+  @apply max-w-3xl mx-auto px-4 sm:max-w-5xl md:max-w-6xl;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-card border border-gray-100 dark:border-gray-700;
+}
+
+.card-hover {
+  @apply transition-shadow hover:shadow-lg;
+}
